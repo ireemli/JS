@@ -1,1 +1,2 @@
-# Calculation is made according to the selected operator
+# ReadMe
+Calculation is made according to the selected operator
