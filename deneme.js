@@ -22,7 +22,7 @@ function calculate(a,b,operator){ //function for calculate the numbers with sele
 
 function main(){
     const num1= parseFloat(prompt("Enter the first number to calculate: "));//usage of prompt for getting the info from user
-    const num2= parseFloat(prompt("Enter the second number to calculate: "));//Convert a String to an Integer
+    const num2= parseFloat(prompt("Enter the second number to calculate: "));//Convert a String to a Float
     const operator= prompt ("Enter a calculation operator (+,-,*,/): ");
     const answer = calculate(num1, num2, operator);
     if (answer !== null) {
