@@ -1,3 +1,5 @@
+const readline = require('readline');//reading the input stream line by line
+
 function calculate(a,b,operator){ //function for calculate the numbers with selected operator
     let ans="";//variable for answer
     switch(operator){//attitude towards the selected operator
@@ -21,12 +23,17 @@ function calculate(a,b,operator){ //function for calculate the numbers with sele
 }
 
 function main(){
-    const num1= prompt("Enter the first number to calculate: ");//usage of prompt for getting the info from user
-    const num2= prompt("Enter the second number to calculate: ");
-    const operator= prompt ("Enter a calculation operator (+,-,*,/): ");
-    const answer = calculate(num1, num2, operator);
-    if (answer !== null) {
-        console.log("Answer is: " +num1 + ""+ operator+ ""+ num2 +"=" +answer);
-      }
+    const rl = readline.createInterface(process.stdin, process.stdout);//cereating interface for input and output,for interaction
+    rl.question("Enter the first number to calculate: ",(num1)=>{//usage of readline 
+        rl.question("Enter the second number to calculate: ",(num2)=>{//Convert a String to a Float
+            rl.question("Enter a calculation operator (+,-,*,/): ",(operator)=>{
+            const answer = calculate(parseFloat(num1), parseFloat(num2), operator);//Convert a String to a Float
+                if (answer !== null) {
+                    console.log("Answer is: " +num1 + ""+ operator+ ""+ num2 +"=" +answer);
+                }
+            rl.close();
+            });
+        });
+    });
 }
 main();//manually calling the main function,unlike other languages
